@@ -13,8 +13,7 @@ const MyWork = () => {
 					<div className="mywork">
 						<h4>Gutenberg Forms</h4>
 						<p>
-							Anything that lives on the web, I have an interest
-							for.
+							This is the next generation WordPress form builder plugin.
 						</p>
 					</div>
 				</div>
@@ -22,8 +21,7 @@ const MyWork = () => {
 					<div className="mywork">
 						<h4>Modula</h4>
 						<p>
-							Anything that lives on the web, I have an interest
-							for.
+						Modula is the best WordPress gallery plugin for adding custom, unique and responsive galleries to your website.
 						</p>
 					</div>
 				</div>
@@ -31,8 +29,7 @@ const MyWork = () => {
 					<div className="mywork">
 						<h4>Strong Testimonials</h4>
 						<p>
-							Anything that lives on the web, I have an interest
-							for.
+						Beginners and pros alike will appreciate the wealth of flexible features refined over 4 years from user feedback and requests.
 						</p>
 					</div>
 				</div>
@@ -40,8 +37,7 @@ const MyWork = () => {
 					<div className="mywork">
 						<h4>Peregrine Shop</h4>
 						<p>
-							Anything that lives on the web, I have an interest
-							for.
+							Ecommerce store
 						</p>
 					</div>
 				</div>
