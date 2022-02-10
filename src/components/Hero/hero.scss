@@ -1,0 +1,36 @@
+@media screen and (max-width: 768px ) {
+	.hero {
+		text-align: center;
+		h1 {
+			padding: 1em 0em;
+		}
+		p {
+			padding-bottom: 1em;
+		}
+
+		.hero_image {
+			display:flex;
+			justify-content: center;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.hero {
+		display:flex;
+		flex-direction: row-reverse;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 1em 6em;
+		justify-content: space-between;
+		text-align: right;
+
+		h1 {
+			padding: 1em;
+		}
+
+		p {
+			padding: 2em;
+		}
+	}
+}

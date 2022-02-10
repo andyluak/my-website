@@ -1,0 +1,41 @@
+.header {
+	padding: 1em 6em;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background: white;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+
+	li {
+		padding: 0 2em;
+		cursor: pointer;
+		font-weight: 300;
+	}
+
+	li:hover {
+		font-weight: 500;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header {
+		padding: .3em 1em;
+
+		.logo {
+			width: 100px;
+		}
+	}
+
+	nav ul {
+		align-items: flex-start;
+
+		li {
+			font-size: .8em;
+			padding: 0 .4em;
+		}
+	}
+}
