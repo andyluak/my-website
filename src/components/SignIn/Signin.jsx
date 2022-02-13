@@ -10,7 +10,7 @@ export default function SignIn() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			let res = await fetch('http://localhost:3600/auth', {
+			let res = await fetch('/api/auth', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
