@@ -7,7 +7,7 @@ import React from 'react';
 const MyWork = () => {
 	return (
 		<section className="mywork_container">
-			<h1>MY WORK</h1>
+			<h1>PROJECTS I WORKED ON</h1>
 			<div className="myworks_container">
 				<div className="mywork_container">
 					<div className="mywork">

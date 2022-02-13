@@ -8,7 +8,6 @@ const Hero = () => {
 		<div className="hero">
 			<div className="hero_text">
 				<h1>I build stuff</h1>
-				<p>Complete web solutions for you and your business</p>
 			</div>
 
 			<div className="hero_image">
