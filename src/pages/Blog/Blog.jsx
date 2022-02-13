@@ -1,10 +1,15 @@
-import posts from './posts.json';
 import './blog.scss';
 
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 
 export default function Blog() {
-	console.log(posts.posts);
+	const [posts, setPosts] = useState([]);
+
+	const fetchPosts = async () => {
+		let result = await fetch("/api/posts")
+		let posts = await result.json();
+		setPosts(posts);
+	}
 	// Convert date to readable date
 	const convertDate = (date) => {
 		const dateObj = new Date(date);
@@ -13,18 +18,21 @@ export default function Blog() {
 		const year = dateObj.getFullYear();
 		return `${month}/${day}/${year}`;
 	}
+
+	useEffect(() => {
+		fetchPosts();
+	}, []);
 	return (
 	<div className="container blog-container">
 		<div className="posts">
-		{posts.posts.map(( post, index ) => {
+		{posts.map(( post, index ) => {
 			return (
 				<div className="post" key={index}>
 					<img src={`/assets/images/${post.featuredImage}`} />
-					<h1>{post.postTitle}</h1>
-					<p>{convertDate(post.postDate)}</p>
-					<p>{post.postContent}</p>
-					<p>{post.postAuthor}</p>
-					<p>{post.postCategory}</p>
+					<h1>{post.title}</h1>
+					<p>{convertDate(post.createdAt)}</p>
+					<p>{post.content}</p>
+					<p>{post.author}</p>
 					<p>{post.postTags}</p>
 				</div>
 

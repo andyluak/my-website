@@ -13,13 +13,9 @@ exports.routesConfig = function (app) {
 	]);
 
 	app.get('/api/posts/:postId', [
-		ValidationMiddleware.validJWTNeeded,
-		PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
 		PostsController.getById,
 	]);
 	app.get('/api/posts', [
-		ValidationMiddleware.validJWTNeeded,
-		PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
 		PostsController.list,
 	]);
 
