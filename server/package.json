@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-rest-api",
+  "version": "1.0.0",
+  "description": "My rest api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyluak/portfolio-rest-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andyluak/portfolio-rest-api/issues"
+  },
+  "homepage": "https://github.com/andyluak/portfolio-rest-api#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.1",
+    "uuid": "^8.3.2"
+  }
+}

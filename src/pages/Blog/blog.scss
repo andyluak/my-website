@@ -1,0 +1,22 @@
+.blog-container {
+	background: #fff;
+
+
+	.posts {
+		display: flex;
+		flex-direction: row;
+		gap: 5em;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.post {
+		width: 33%;
+		img {
+			width: 100%;
+		}
+		h1{
+			text-align: center;
+		}
+	}
+}

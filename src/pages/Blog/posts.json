@@ -1,0 +1,34 @@
+{
+	"posts": [
+		{
+			"id": 1,
+			"postTitle": "Post 1",
+			"postContent": "This is the content of post 1",
+			"postDate": "2018-01-01",
+			"postAuthor": "John Doe",
+			"postCategory": "Category 1",
+			"postTags": ["tag1", "tag2", "tag3"],
+			"featuredImage": "code.jpg"
+		},
+		{
+			"id": 2,
+			"postTitle": "Post 2",
+			"postContent": "This is the content of post 2",
+			"postDate": "2018-01-01",
+			"postAuthor": "John Doe",
+			"postCategory": "Category 1",
+			"postTags": ["tag1", "tag2", "tag3"],
+			"featuredImage": "code.jpg"
+		},
+		{
+			"id": 3,
+			"postTitle": "Post 3",
+			"postContent": "This is the content of post 3",
+			"postDate": "2018-01-01",
+			"postAuthor": "John Doe",
+			"postCategory": "Category 1",
+			"postTags": ["tag1", "tag2", "tag3"],
+			"featuredImage": "code.jpg"
+		}
+	]
+}

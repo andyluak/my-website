@@ -14,7 +14,21 @@ ul {
   margin: 0;
 }
 
+a {
+  margin: 0;
+  padding:0;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+}
+
 h1,p {
   margin:0;
   padding:0;
+}
+
+.container {
+  padding: 1em 6em;
 }
