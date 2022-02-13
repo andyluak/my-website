@@ -13,7 +13,7 @@ function App() {
 		<div className="App">
 			<Header />
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route exact path="/" element={<Home />} />
 				<Route path="/blog" element={<Blog />} />
 				<Route
 					exact
@@ -22,6 +22,7 @@ function App() {
 						<Admin />
 					}
 				/>
+				<Route path="*" element={<Home />} />
 			</Routes>
 			<Footer />
 		</div>
