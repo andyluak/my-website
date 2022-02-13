@@ -16,13 +16,10 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/blog" element={<Blog />} />
 				<Route
+					exact
 					path="/admin-login"
 					element={
-						!localStorage.getItem('bearer') ? (
-							<Admin />
-						) : (
-							<Navigate to="/" />
-						)
+						<Admin />
 					}
 				/>
 			</Routes>
