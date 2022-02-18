@@ -2,10 +2,7 @@ import './blog.scss';
 
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import moment from 'moment';
 
-import Tag from '../../components/Tag/Tag';
 import Post from '../../components/Post/Post';
 
 export default function Blog() {

@@ -30,17 +30,16 @@ export default function SinglePost() {
 	}, []);
 
 	return (
-		<div>
+		<div className="single-post-container">
 			{post && (
 				<>
-					{' '}
 					<Helmet>
 						<title>{post.title}</title>
 					</Helmet>
 					<div className="single-post">
 						<img
 							src={`https://portfoliostorage.fra1.digitaloceanspaces.com/${post.featuredImage}`}
-							alt="featured-image"
+							alt="coding"
 						/>
 						<div className="single-post-content">
 							<h1>{post.title}</h1>

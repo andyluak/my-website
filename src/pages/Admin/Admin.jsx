@@ -54,12 +54,10 @@ export default function Admin() {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization:
-					'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjA4YzBlNGU3MTdmMDZiZDExZjI5NDciLCJlbWFpbCI6ImFuZHluaG8uc3RhckBnbWFpbC5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsInJlZnJlc2hLZXkiOiIvWVFieHpSNDB1SEVqdFFncDFRS3pRPT0iLCJpYXQiOjE2NDQ3NDE1MTd9.Hh5tDgqChN96f-1ASFuScTPB94Z0ZX8Fr9k4ny4WkpY',
 			},
 			body: JSON.stringify({
 				title: post.title,
-				author: post.author == '' ? 'Alex' : post.author,
+				author: post.author === '' ? 'Alex' : post.author,
 				content: {
 					html: postHTML,
 					text: postText,
@@ -82,7 +80,6 @@ export default function Admin() {
 					name="title"
 					autoComplete="off"
 					autoCapitalize="on"
-					autoCapitalize="true"
 					data-lpignore="true"
 				/>
 				<RichText
