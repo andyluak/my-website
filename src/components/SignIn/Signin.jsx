@@ -27,7 +27,6 @@ export default function SignIn() {
 			setEmail('');
 			setPassword('');
 		} catch (err) {
-			console.log(err);
 		}
 		setEmail('');
 		setPassword('');
