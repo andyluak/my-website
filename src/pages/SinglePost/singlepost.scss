@@ -4,14 +4,14 @@
 	flex-direction: column;
 	align-items: center;
 	img {
-		width: 90%;
+		width: 50%;
 		max-height: 300px;
 		// fit cover
 		object-fit: cover;
 		object-position: center;
 	}
 	.single-post-content {
-		width:90%;
+		width:50%;
 		text-align: left;
 		padding: 3rem 0;
 		h1 {
@@ -83,5 +83,16 @@
 		display:flex;
 		align-items: center;
 		gap: 1rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.single-post {
+		img {
+			width: 90%;
+		}
+		.single-post-content {
+			width: 90%;
+		}
 	}
 }
