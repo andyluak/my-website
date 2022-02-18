@@ -4,14 +4,14 @@
 	flex-direction: column;
 	align-items: center;
 	img {
-		width: 50%;
+		width: 90%;
 		max-height: 300px;
 		// fit cover
 		object-fit: cover;
 		object-position: center;
 	}
 	.single-post-content {
-		width:50%;
+		width:90%;
 		text-align: left;
 		padding: 3rem 0;
 		h1 {
