@@ -50,7 +50,7 @@ export default function Admin() {
 		});
 
 		// Fetch with bearer
-		fetch('/api/posts', {
+		fetch('/posts', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
