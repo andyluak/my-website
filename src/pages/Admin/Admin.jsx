@@ -41,7 +41,7 @@ export default function Admin() {
 		// Send the image to the server
 		let formData = new FormData();
 		formData.append('file', image.data);
-		fetch(`/api/upload`, {
+		fetch(`/upload`, {
 			method: 'POST',
 			body: formData,
 			headers: {

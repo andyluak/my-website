@@ -20,7 +20,7 @@ export default function SinglePost() {
 	const { slug } = useParams();
 
 	const fetchPost = async () => {
-		let result = await fetch(`/api/posts/slug/${slug}`);
+		let result = await fetch(`/posts/slug/${slug}`);
 		let post = await result.json();
 		setPost(post);
 	};

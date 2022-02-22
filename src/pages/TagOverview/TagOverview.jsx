@@ -12,7 +12,7 @@ export default function TagOverview() {
 	const [tagPosts, setTagPosts] = useState([]);
 
 	const fetchTagPosts = async () => {
-		let result = await fetch(`/api/posts/tags/${tag}`);
+		let result = await fetch(`/posts/tags/${tag}`);
 		let tagPosts = await result.json();
 		setTagPosts(tagPosts);
 	};

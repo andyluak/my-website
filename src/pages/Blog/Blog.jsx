@@ -9,7 +9,7 @@ export default function Blog() {
 	const [posts, setPosts] = useState([]);
 
 	const fetchPosts = async () => {
-		let result = await fetch('/api/posts');
+		let result = await fetch('/posts');
 		let posts = await result.json();
 		setPosts(posts);
 	};
