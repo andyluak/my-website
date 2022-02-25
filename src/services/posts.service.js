@@ -1,10 +1,7 @@
 import { authHeader } from "./data.service";
 
-if( process.env.NODE_ENV === 'production' ) {
-	console.log('caca');
-}
 
-const API_URL = process.env.NODE_ENV === "development" ? "/posts" : "/api/posts";
+const API_URL = process.env.NODE_ENV === "production" ? "/api/posts" : "/posts";
 export const getPosts = async () => {
 
 	let res = await fetch('/posts');

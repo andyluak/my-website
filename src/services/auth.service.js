@@ -1,4 +1,4 @@
-const API_URL = process.env.NODE_ENV === "development" ? "/auth" : "/api/auth";
+const API_URL = process.env.NODE_ENV === "production" ? "/api/auth" : "/auth";
 
 export const login = async ( email, password ) => {
 
