@@ -1,6 +1,8 @@
+const API_URL = process.env.NODE_ENV === "development" ? "/auth" : "/api/auth";
+
 export const login = async ( email, password ) => {
 
-	let res = await fetch('http://localhost:3600/auth', {
+	let res = await fetch(API_URL, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

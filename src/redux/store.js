@@ -6,7 +6,9 @@ import rootReducer from "./root-reducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const logger = createLogger();
-const middleware = [thunk, logger];
+
+// Add logger only in development mode
+const middleware = process.env.NODE_ENV === "development" ? [thunk, logger] : [thunk];
 
 const store = createStore( rootReducer, composeWithDevTools(applyMiddleware(...middleware)) );
 
