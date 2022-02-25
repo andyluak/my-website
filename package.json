@@ -33,7 +33,8 @@
     "redux-thunk": "^2.4.1",
     "terser-brunch": "^4.1.0",
     "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "why-did-you-update": "^1.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -59,5 +60,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3600"
+  "proxy": "http://localhost:3600",
+  "devDependencies": {
+    "@welldone-software/why-did-you-render": "^6.2.3"
+  }
 }
