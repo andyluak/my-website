@@ -4,33 +4,15 @@ import './signin.scss';
 import FormInput from '../../components/FormInput/FormInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 
-export default function SignIn() {
+export default function SignIn( {onLogin}) {
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
-	const handleSubmit = async (event) => {
-		event.preventDefault();
-		try {
-			let res = await fetch('/auth', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					email,
-					password
-				})
-			});
-			let bearer = await res.json();
-			localStorage.setItem('bearer', bearer.accessToken);
 
 
-			setEmail('');
-			setPassword('');
-		} catch (err) {
-		}
-		setEmail('');
-		setPassword('');
-	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		onLogin(email, password);
+	}
 
 	return (
 		<div className="sign-in">

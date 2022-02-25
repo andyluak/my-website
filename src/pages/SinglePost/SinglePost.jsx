@@ -3,6 +3,8 @@ import './singlepost.scss';
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import { useParams } from 'react-router';
+import { connect } from 'react-redux';
+import { getPostBySlugRequest } from '../../redux/posts/posts.actions';
 import { Helmet } from 'react-helmet-async';
 import {
 	FacebookShareButton,
@@ -15,18 +17,11 @@ import { ReactComponent as LinkedinLogo } from '../../assets/images/linkedin.svg
 import { ReactComponent as EmailLogo } from '../../assets/images/email.svg';
 import Tag from '../../components/Tag/Tag';
 
-export default function SinglePost() {
-	const [post, setPost] = useState(null);
+function SinglePost({ post, onGetPostBySlug }) {
 	const { slug } = useParams();
 
-	const fetchPost = async () => {
-		let result = await fetch(`/posts/slug/${slug}`);
-		let post = await result.json();
-		setPost(post);
-	};
-
 	useEffect(() => {
-		fetchPost();
+		onGetPostBySlug(slug);
 	}, []);
 
 	return (
@@ -97,3 +92,13 @@ export default function SinglePost() {
 		</div>
 	);
 }
+
+const mapStateToProps = (state) => ({
+	post: state.posts.post,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	onGetPostBySlug: (slug) => dispatch(getPostBySlugRequest(slug)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SinglePost);

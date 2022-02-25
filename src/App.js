@@ -1,6 +1,6 @@
 import './App.scss';
 
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 import Header from './components/Header/Header';
@@ -9,8 +9,8 @@ import Home from './pages/Home/Home';
 import Blog from './pages/Blog/Blog';
 import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
-import PostManager from './components/PostManager/PostManager';
-import PostWriter from './components/PostWriter/PostWriter';
+import PostManager from './pages/PostManager/PostManager';
+import PostWriter from './pages/PostWriter/PostWriter';
 import EditPost from './components/EditPost/EditPost';
 
 import SinglePost from './pages/SinglePost/SinglePost';
@@ -36,7 +36,7 @@ function App() {
 						<Login />
 					}
 				/>
-				<Route exact  path="/admin" element={<Admin />}>
+				<Route exact path="/admin" element={<Admin />}>
 					<Route path="manager" element={<PostManager />}>
 						<Route path=":postID" element={<EditPost />} />
 					</Route>
@@ -49,4 +49,4 @@ function App() {
 	);
 }
 
-export default App;
+export default (App);

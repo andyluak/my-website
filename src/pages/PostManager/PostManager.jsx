@@ -3,19 +3,20 @@ import './postmanager.scss';
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { useParams } from 'react-router';
+import { connect } from 'react-redux';
+import { getPostsRequest } from '../../redux/posts/posts.actions';
 
-export default function PostManager() {
-	const [posts, setPosts] = useState([]);
+function PostManager( { posts, onGetPosts } ) {
 	const { postID } = useParams();
-	console.log(postID);
 
-	const fetchPosts = async () => {
-		const response = await fetch('/posts');
-		const json = await response.json();
-		setPosts(json);
-	};
+	useEffect(() => {
+		onGetPosts();
+	}, []);
 
-	useEffect(() => fetchPosts(), []);
+	if( !posts.length ) {
+		return <div>Loading...</div>;
+	}
+
 
 	return (
 		<>
@@ -51,3 +52,13 @@ export default function PostManager() {
 		</>
 	);
 }
+
+const mapStateToProps = (state) => ({
+	posts: state.posts.posts,
+});
+
+const mapDispatchToProps = dispatch => ({
+	onGetPosts: () => dispatch(getPostsRequest()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostManager);

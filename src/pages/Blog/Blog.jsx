@@ -1,22 +1,21 @@
 import './blog.scss';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { connect } from 'react-redux';
+
+import { getPostsRequest } from '../../redux/posts/posts.actions';
 
 import Post from '../../components/Post/Post';
 
-export default function Blog() {
-	const [posts, setPosts] = useState([]);
-
-	const fetchPosts = async () => {
-		let result = await fetch('/posts');
-		let posts = await result.json();
-		setPosts(posts);
-	};
-
+function Blog( { posts, onGetPosts } ) {
 	useEffect(() => {
-		fetchPosts();
+		onGetPosts();
 	}, []);
+
+	if( !posts.length ) {
+		return <div>Loading...</div>;
+	}
 
 	return (
 		<div className="container blog-container">
@@ -31,3 +30,13 @@ export default function Blog() {
 		</div>
 	);
 }
+
+const mapStateToProps = (state) => ({
+	posts: state.posts.posts,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	onGetPosts: () => dispatch(getPostsRequest()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);
