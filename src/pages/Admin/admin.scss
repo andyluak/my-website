@@ -1,4 +1,5 @@
 .form-container {
+	width: 80%;
 	.title-input {
 		display:block;
 		width: 100%;
@@ -17,5 +18,27 @@
 
 	.custom-button {
 		margin-top: 2rem;
+	}
+}
+
+
+.container-with-sidebar {
+	display: flex;
+	flex-direction: row;
+	background: white;
+	.sidebar {
+		width: 20%;
+		display:flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: flex-start;
+		padding: 0 2rem;
+
+		.sidebar-content p {
+			cursor: pointer;
+		}
+	}
+	.form-container {
+		width: 80%;
 	}
 }

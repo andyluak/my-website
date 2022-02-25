@@ -9,6 +9,10 @@ import Home from './pages/Home/Home';
 import Blog from './pages/Blog/Blog';
 import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
+import PostManager from './components/PostManager/PostManager';
+import PostWriter from './components/PostWriter/PostWriter';
+import EditPost from './components/EditPost/EditPost';
+
 import SinglePost from './pages/SinglePost/SinglePost';
 import TagOverview from './pages/TagOverview/TagOverview';
 
@@ -32,7 +36,12 @@ function App() {
 						<Login />
 					}
 				/>
-				<Route exact  path="/admin" element={<Admin />}/>
+				<Route exact  path="/admin" element={<Admin />}>
+					<Route path="manager" element={<PostManager />}>
+						<Route path=":postID" element={<EditPost />} />
+					</Route>
+					<Route path="new" element={<PostWriter />} />
+				</Route>
 				<Route path="*" element={<Home />} />
 			</Routes>
 			<Footer />

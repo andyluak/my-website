@@ -1,0 +1,22 @@
+.form-container {
+	width: 80%;
+	.title-input {
+		display:block;
+		width: 100%;
+		border: 0;
+		padding: 2rem 0;
+		font-size: 2rem;
+		// Remove blue when focus
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.ql-editor {
+		min-height: 10rem;
+	}
+
+	.custom-button {
+		margin-top: 2rem;
+	}
+}

@@ -1,9 +1,10 @@
-import './admin.scss';
-
 import React, { useState } from 'react';
-import { Routes, Route, Link, Outlet } from 'react-router-dom';
 
-export default function Admin() {
+import RichText from '../../components/RichText/RichText';
+import MultipleSelect from '../../components/MultipleSelect/MultipleSelect';
+import CustomButton from '../../components/CustomButton/CustomButton';
+
+export default function PostWriter() {
 	const [postHTML, setPostHTML] = useState('');
 	const [postText, setPostText] = useState('');
 	const [post, setPost] = useState({});
@@ -51,7 +52,6 @@ export default function Admin() {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjA4YzBlNGU3MTdmMDZiZDExZjI5NDciLCJlbWFpbCI6ImFuZHluaG8uc3RhckBnbWFpbC5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsInJlZnJlc2hLZXkiOiIvWVFieHpSNDB1SEVqdFFncDFRS3pRPT0iLCJpYXQiOjE2NDQ3NDE1MTd9.Hh5tDgqChN96f-1ASFuScTPB94Z0ZX8Fr9k4ny4WkpY`,
 			},
 			body: JSON.stringify({
 				title: post.title,
@@ -66,20 +66,33 @@ export default function Admin() {
 			}),
 		});
 	};
-
 	return (
-		<div className="container-fluid container-with-sidebar">
-			<div className="sidebar">
-				<div className="sidebar-header">
-					<h3>Admin</h3>
-				</div>
-
-				<div className="sidebar-content">
-					<Link to='/admin/new'><p>Write new post</p></Link>
-					<Link to='/admin/manager'><p>Manage posts</p></Link>
-				</div>
-			</div>
-			<Outlet />
+		<div className="form-container">
+			<form onSubmit={handleSubmit}>
+				<input
+					className="title-input input"
+					onChange={(e) => handleChange(e)}
+					type="text"
+					placeholder="Title"
+					name="title"
+					autoComplete="off"
+					autoCapitalize="on"
+					data-lpignore="true"
+				/>
+				<RichText
+					value={postHTML}
+					setPostHTML={setPostHTML}
+					setPostText={setPostText}
+				/>
+				<MultipleSelect options={tags} setOptions={setTags} />
+				<input
+					onChange={(e) => handleChange(e)}
+					type="file"
+					placeholder="Image"
+					name="featuredImage"
+				/>
+				<CustomButton type="submit">Submit</CustomButton>
+			</form>
 		</div>
 	);
 }
