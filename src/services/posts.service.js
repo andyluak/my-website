@@ -1,3 +1,5 @@
+import { authHeader } from "./data.service";
+
 export const getPosts = async () => {
 
 	let res = await fetch('/posts');
@@ -20,4 +22,14 @@ export const getPostsByTag = async (tag) => {
 	let posts = await res.json();
 
 	return posts;
+}
+
+export const deletePost = async (id) => {
+
+	let res = await fetch(`/posts/${id}`, {
+		method: 'DELETE',
+		headers: authHeader(),
+	});
+	let post = await res.json();
+	return post;
 }

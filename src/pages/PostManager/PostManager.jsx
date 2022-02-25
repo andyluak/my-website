@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { connect } from 'react-redux';
-import { getPostsRequest } from '../../redux/posts/posts.actions';
+import { getPostsRequest, deletePostRequest } from '../../redux/posts/posts.actions';
 
-function PostManager( { posts, onGetPosts } ) {
+function PostManager( { posts, onGetPosts, onDeletePost } ) {
 	const { postID } = useParams();
 
 	useEffect(() => {
@@ -41,7 +41,7 @@ function PostManager( { posts, onGetPosts } ) {
 										<Link to={`/admin/manager/${post.id}`}>
 											<button>Edit</button>
 										</Link>
-										<button>Delete</button>
+										<button onClick={()=> onDeletePost(post.id)}>Delete</button>
 									</td>
 								</tr>
 							);
@@ -59,6 +59,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
 	onGetPosts: () => dispatch(getPostsRequest()),
+	onDeletePost: (id) => dispatch(deletePostRequest(id)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostManager);

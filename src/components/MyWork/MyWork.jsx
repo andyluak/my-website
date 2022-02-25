@@ -1,7 +1,4 @@
 import './my-work.scss';
-import { ReactComponent as WebDev } from '../../assets/images/webdev.svg';
-import { ReactComponent as PluginDev } from '../../assets/images/plugindev.svg';
-import { ReactComponent as SiteDev } from '../../assets/images/sitedev.svg';
 import React from 'react';
 
 const MyWork = () => {

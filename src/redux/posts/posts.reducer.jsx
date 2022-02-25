@@ -36,6 +36,20 @@ export const postsReducer = (state = initialState, action) => {
 				...state,
 				error: action.payload,
 			};
+		case PostActionTypes.DELETE_POST_SUCCESS: {
+			const posts = state.posts.filter(
+				(post) => post.id !== action.payload.id
+			);
+			return {
+				...state,
+				posts,
+			};
+		}
+		case PostActionTypes.DELETE_POST_FAILURE:
+			return {
+				...state,
+				error: action.payload,
+			};
 		default:
 			return state;
 	}

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import RichText from '../../components/RichText/RichText';
 import MultipleSelect from '../../components/MultipleSelect/MultipleSelect';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import {authHeader} from '../../services/data.service';
 
 export default function PostWriter() {
 	const [postHTML, setPostHTML] = useState('');
@@ -52,6 +53,7 @@ export default function PostWriter() {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
+				...authHeader(),
 			},
 			body: JSON.stringify({
 				title: post.title,

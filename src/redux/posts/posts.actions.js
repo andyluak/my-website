@@ -1,5 +1,5 @@
 import { PostActionTypes } from './posts.types';
-import { getPosts, getPostBySlug, getPostsByTag } from "../../services/posts.service";
+import { getPosts, getPostBySlug, getPostsByTag, deletePost } from "../../services/posts.service";
 
 export const getPostsRequest = () => dispatch => {
 	getPosts().then(data => {
@@ -41,6 +41,22 @@ export const getPostsByTagRequest = (tag) => dispatch => {
 	}, error => {
 		dispatch({
 			type: PostActionTypes.GET_POSTS_BY_TAG_FAILURE,
+			payload: { error },
+		});
+	});
+}
+
+export const deletePostRequest = (id) => dispatch => {
+	deletePost(id).then(data => {
+	dispatch({
+		type: PostActionTypes.DELETE_POST_SUCCESS,
+		payload: data ,
+	});
+		return Promise.resolve();
+	}, error => {
+		console.log(error);
+		dispatch({
+			type: PostActionTypes.DELETE_POST_FAILURE,
 			payload: { error },
 		});
 	});
