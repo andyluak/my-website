@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component tests Header not authenticated component tests expect Header to render without crashing 1`] = `
+<div
+  className="header"
+>
+  <ForwardRef(SvgLogo)
+    className="logo"
+  />
+  <nav>
+    <ul>
+      <li>
+        <Link
+          to="/"
+        >
+          Home
+        </Link>
+         
+      </li>
+      <li>
+        <Link
+          to="/blog"
+        >
+          Blog 
+        </Link>
+         
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

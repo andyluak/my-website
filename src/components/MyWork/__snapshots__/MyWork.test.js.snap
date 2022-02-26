@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My work component tests excepct to render My Work component 1`] = `
+<section
+  className="mywork_container"
+>
+  <h1>
+    PROJECTS I WORKED ON
+  </h1>
+  <div
+    className="myworks_container"
+  >
+    <div
+      className="mywork_container"
+    >
+      <div
+        className="mywork"
+      >
+        <h4>
+          Gutenberg Forms
+        </h4>
+        <p>
+          This is the next generation WordPress form builder plugin.
+        </p>
+      </div>
+    </div>
+    <div
+      className="mywork_container"
+    >
+      <div
+        className="mywork"
+      >
+        <h4>
+          Modula
+        </h4>
+        <p>
+          Modula is the best WordPress gallery plugin for adding custom, unique and responsive galleries to your website.
+        </p>
+      </div>
+    </div>
+    <div
+      className="mywork_container"
+    >
+      <div
+        className="mywork"
+      >
+        <h4>
+          Strong Testimonials
+        </h4>
+        <p>
+          Beginners and pros alike will appreciate the wealth of flexible features refined over 4 years from user feedback and requests.
+        </p>
+      </div>
+    </div>
+    <div
+      className="mywork_container"
+    >
+      <div
+        className="mywork"
+      >
+        <h4>
+          Peregrine Shop
+        </h4>
+        <p>
+          Ecommerce store
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+`;

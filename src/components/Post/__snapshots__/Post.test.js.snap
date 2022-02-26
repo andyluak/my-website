@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post component tests excepct to render Post component 1`] = `
+<div
+  className="post"
+  key="0"
+>
+  <div
+    className="post-img"
+    style={
+      Object {
+        "backgroundImage": "url(https://portfoliostorage.fra1.digitaloceanspaces.com/code.jpg)",
+      }
+    }
+  />
+  <h1>
+    <Link
+      to="/test-slug"
+    >
+      Test title
+    </Link>
+  </h1>
+  <p
+    className="post-content"
+  >
+    Test content
+    ...
+  </p>
+  <div
+    className="post-meta-container"
+  >
+    <div
+      className="post-author"
+    >
+      <p
+        className="author"
+      />
+      <p
+        className="date"
+      >
+        February 26th 2022
+      </p>
+    </div>
+    <div
+      className="tags"
+    >
+      <Tag
+        key="0"
+        tag="javascript"
+      />
+    </div>
+  </div>
+</div>
+`;

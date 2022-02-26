@@ -3,6 +3,7 @@ import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import React, { lazy } from 'react';
+import { connect } from 'react-redux';
 
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
@@ -17,7 +18,7 @@ const PostManager = lazy(() => import('./pages/PostManager/PostManager'));
 const PostWriter = lazy(() => import('./pages/PostWriter/PostWriter'));
 const EditPost = lazy(() => import('./components/EditPost/EditPost'));
 
-function App() {
+function App({isAuthenticated}) {
 	return (
 		<div className="App">
 			<Helmet>
@@ -27,7 +28,7 @@ function App() {
 					content="Alex Tirim - free content to learn about programming and everything related to the web"
 				/>
 			</Helmet>
-			<Header />
+			<Header isAuthenticated={isAuthenticated}/>
 			<React.Suspense fallback={<div>Loading...</div>}>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
@@ -49,4 +50,10 @@ function App() {
 	);
 }
 
-export default App;
+const mapStateToProps = state => {
+	return {
+		isAuthenticated: state.auth.isAuthenticated,
+	};
+}
+
+export default connect(mapStateToProps)(App);

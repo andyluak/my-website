@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput component tests excepct to render FormInput component 1`] = `
+<div
+  className="group"
+>
+  <input
+    className="form-input"
+    name="test"
+    onChange={[MockFunction]}
+    type="text"
+    value="test"
+  />
+  <label
+    className="shrink form-input-label"
+  >
+    Test Label
+  </label>
+</div>
+`;
+
+exports[`FormInput component tests excepct to render FormInput component with value 1`] = `
+<div
+  class="group"
+>
+  <input
+    class="form-input"
+    name="test"
+    type="text"
+    value="1"
+  />
+  <label
+    class=" form-input-label"
+  >
+    Test Label
+  </label>
+</div>
+`;

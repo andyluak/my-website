@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Custom button component tests excepct to render Custom Button component 1`] = `
+<button
+  className="custom-button"
+/>
+`;
+
+exports[`Custom button component tests excepct to render Custom Button component with children 1`] = `
+<button
+  class="custom-button"
+>
+  Hello
+</button>
+`;
+
+exports[`Custom button component tests excepct to render Custom Button component with children and props 1`] = `
+<button
+  class="custom-button"
+  disabled=""
+>
+  Hello
+</button>
+`;
+
+exports[`Custom button component tests excepct to render Custom Button component with children and type submit 1`] = `
+<button
+  class="custom-button"
+  type="submit"
+>
+  Hello
+</button>
+`;

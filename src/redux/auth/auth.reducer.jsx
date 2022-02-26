@@ -21,7 +21,6 @@ export const authReducer = (state = initialState, action) => {
 				isAuthenticated: true,
 				email: '',
 				password: '',
-				loggedIn: true,
 			};
 		case AuthActionTypes.LOGIN_FAILURE:
 			return {

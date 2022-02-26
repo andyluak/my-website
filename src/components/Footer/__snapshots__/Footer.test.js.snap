@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component tests excepct to render Footer component 1`] = `
+<footer>
+  <h4>
+    Follow me on all the socials
+  </h4>
+  <div
+    className="social_links"
+  >
+    <a
+      href="https://github.com/andyluak"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <ForwardRef(SvgGithub)
+        className="social-icon"
+      />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/alex-tirim-155a95192/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <ForwardRef(SvgLinkedin)
+        className="social-icon"
+      />
+    </a>
+    <a
+      href="https://www.instagram.com/andylukak"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <ForwardRef(SvgInstagram)
+        className="social-icon"
+      />
+    </a>
+  </div>
+</footer>
+`;
