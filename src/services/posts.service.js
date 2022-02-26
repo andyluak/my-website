@@ -12,7 +12,7 @@ export const getPosts = async () => {
 
 export const getPostBySlug = async (slug) => {
 
-	let res = await fetch(`${API_URL}/${slug}`);
+	let res = await fetch(`${API_URL}/slug/${slug}`);
 	let post = await res.json();
 
 	return post;
@@ -20,7 +20,7 @@ export const getPostBySlug = async (slug) => {
 
 export const getPostsByTag = async (tag) => {
 
-	let res = await fetch(`${API_URL}${tag}`);
+	let res = await fetch(`${API_URL}/tags/${tag}`);
 	let posts = await res.json();
 
 	return posts;
