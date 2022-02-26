@@ -4,7 +4,7 @@ import { authHeader } from "./data.service";
 const API_URL = process.env.NODE_ENV === "production" ? "/api/posts" : "/posts";
 export const getPosts = async () => {
 
-	let res = await fetch('/posts');
+	let res = await fetch(API_URL);
 	let posts = await res.json();
 
 	return posts;
